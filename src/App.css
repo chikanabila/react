@@ -90,4 +90,5 @@ h3:hover::after{
 
 .mb-3 {
   color: rgb(202, 202, 202);
+  text-align: center;
 }
