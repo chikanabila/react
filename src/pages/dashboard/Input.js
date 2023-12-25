@@ -6,7 +6,7 @@ const Input = () => {
     useEffect (() => {
         const fetchData = async () => {
             try {
-                const response = await fetch ("https://jsonlaceholder.typicode.com/posts");
+                const response = await fetch ("https://jsonplaceholder.typicode.com/users");
                 const results = await response.json();
                 setData(results);
             } catch (error) {
@@ -22,19 +22,21 @@ const Input = () => {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Body</th>
-                        <th>Aksi</th>
+                        <th>Nama</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Alamat</th>
+                        <th>No telepon</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((item) => (
-                        <tr key={item.userId}>
-                            <td>{item.id}</td>
-                            <td>{item.title}</td>
-                            <td>{item.body}</td>
-                            <td>Aksi</td>
+                    {data.map((user) => (
+                        <tr key={user.id}>
+                            <td>{user.name}</td>
+                            <td>{user.username}</td>
+                            <td>{user.email}</td>
+                            <td>{user.address.street}</td>
+                            <td>{user.phone}</td>
                         </tr>
                     ))}
                 </tbody>
