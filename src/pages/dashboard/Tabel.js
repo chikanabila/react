@@ -27,11 +27,11 @@ return (
             <table className="custom-table">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Nama</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Address</th>
-                        <th>Phone</th>
+                        <th>Alamat</th>
+                        <th>No telepon</th>
                     </tr>
                 </thead>
                 <tbody>
