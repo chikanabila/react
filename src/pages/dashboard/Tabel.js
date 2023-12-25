@@ -7,7 +7,7 @@ const Tabel = () => {
     useEffect (() => {
         const fetchData = async () => {
             try {
-                const response = await fetch ("https://jsonlaceholder.typicode.com/posts")
+                const response = await fetch ("https://jsonplaceholder.typicode.com/users")
                 const results = await response.json();
                 setdata(results)
             } catch (error) {
@@ -27,17 +27,21 @@ return (
             <table className="custom-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Body</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Phone</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map ((buku) =>(
-                        <tr key={buku.userId} className="table-row">
-                            <td>{buku.id}</td>
-                            <td>{buku.title}</td>
-                            <td>{buku.body}</td>
+                    {data.map ((user) =>(
+                        <tr key={user.id}>
+                            <td>{user.name}</td>
+                            <td>{user.username}</td>
+                            <td>{user.email}</td>
+                            <td>{user.address.street}</td>
+                            <td>{user.phone}</td>
                         </tr>
                     ))}
                 </tbody>
